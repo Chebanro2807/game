@@ -6,7 +6,7 @@ const array = [
     [0, 1, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0]
 ];
-let gameBlock = document.getElementById("game");
+let gameBlock = document.getElementById('game');
 
 let x = 0;
 let y = 0;
@@ -110,6 +110,9 @@ function arrowUp() {
 
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
+document.addEventListener('touchend', ()=>{
+    arrowDown()
+}, false);
 
 var xDown = null;
 var yDown = null;
@@ -138,8 +141,6 @@ function handleTouchMove(evt) {
     } else {
         if ( yDiff > 0 ) {
             arrowUp()
-        } else {
-            arrowDown()
         }
     }
     xDown = null;
