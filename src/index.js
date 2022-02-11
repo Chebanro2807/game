@@ -77,3 +77,4 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
+console.log(stamina)
