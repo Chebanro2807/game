@@ -1,4 +1,4 @@
-function CheckStamina(flag) {
+function delayWithTimer(flag) {
     let check = new Promise((resolve, reject)=>{
         if (flag === false) {
             setTimeout(() => {
@@ -8,4 +8,4 @@ function CheckStamina(flag) {
     })
     return check
 }
-export default CheckStamina
+export default delayWithTimer

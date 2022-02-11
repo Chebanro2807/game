@@ -1,4 +1,4 @@
-import CheckStamina from './components/Stamina'
+import delayWithTimer from './components/Stamina'
 import getXY from './components/GetXY'
 import {moveRight,moveLeft,moveDown,moveUp} from './components/Move'
 import render from './components/Render'
@@ -20,22 +20,22 @@ document.addEventListener('keyup', (event) => {
     if (event.code === 'ArrowRight' && stamina) {
         moveRight(getXY(array),array,gameBlock);
         stamina = false;
-        CheckStamina(stamina).then((check)=> {stamina = check})
+        delayWithTimer(stamina).then((check)=> {stamina = check})
     }
     if (event.code === 'ArrowLeft' && stamina) {
         moveLeft(getXY(array),array,gameBlock);
         stamina = false;
-        CheckStamina(stamina).then((check)=> {stamina = check})
+        delayWithTimer(stamina).then((check)=> {stamina = check})
     }
     if (event.code === 'ArrowDown' && stamina) {
         moveDown(getXY(array),array,gameBlock);
         stamina = false;
-        CheckStamina(stamina).then((check)=> {stamina = check})
+        delayWithTimer(stamina).then((check)=> {stamina = check})
     }
     if (event.code === 'ArrowUp' && stamina) {
         moveUp(getXY(array),array,gameBlock);
         stamina = false;
-        CheckStamina(stamina).then((check)=> {stamina = check})
+        delayWithTimer(stamina).then((check)=> {stamina = check})
     }
 });
 
@@ -77,4 +77,3 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;
 };
-console.log(stamina)
